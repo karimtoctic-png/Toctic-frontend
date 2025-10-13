@@ -1,73 +1,80 @@
-/* Style général */
+/* === STYLE TOCTIC === */
+/* Design officiel TocTic.live ✨ */
+/* Créé pour Karim - Libère ton talent 🎵 */
+
 body {
-  font-family: 'Poppins', sans-serif;
   margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-  color: white;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #000000, #1a1a1a);
+  color: #fff;
   text-align: center;
+  min-height: 100vh;
 }
 
-/* En-tête */
 .header {
-  padding: 30px 20px;
+  padding: 40px 20px;
+  background: linear-gradient(90deg, #ff0050, #00f2ea);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
 .logo {
-  width: 130px;
-  margin-bottom: 15px;
+  width: 150px;
+  animation: logoGlow 3s infinite alternate;
 }
 
-/* Titre principal */
+@keyframes logoGlow {
+  from { filter: drop-shadow(0 0 10px #ff0050); }
+  to { filter: drop-shadow(0 0 20px #00f2ea); }
+}
+
 h1 {
-  font-size: 1.8rem;
-  color: #ff0050;
+  margin-top: 10px;
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-/* Contenu principal */
 .main {
-  margin-top: 20px;
-  padding: 20px;
+  margin-top: 80px;
 }
 
-.actions button {
-  background: #ff0050;
+.main p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  color: #ddd;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  background: linear-gradient(90deg, #ff0050, #00f2ea);
   border: none;
-  border-radius: 25px;
   color: white;
-  font-size: 1rem;
-  padding: 12px 25px;
-  margin: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 14px 30px;
+  border-radius: 30px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-.actions button:hover {
-  background: #ff4081;
-  transform: scale(1.05);
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #00f2ea;
 }
 
-/* Pied de page */
 .footer {
-  margin-top: 40px;
-  padding: 15px;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
   font-size: 0.9rem;
-  color: #ccc;
+  color: #aaa;
 }
 
-/* Adaptation smartphone */
-@media only screen and (max-width: 768px) {
-  .logo {
-    width: 100px;
-    animation: none !important;
-    margin: 10px auto;
-  }
-
-  h1 {
-    font-size: 1.4rem;
-  }
-
-  .actions button {
-    width: 80%;
-  }
+.footer p {
+  margin: 0;
+  opacity: 0.8;
 }
