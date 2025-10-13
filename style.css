@@ -8,3 +8,12 @@
   animation: none !important; /* désactive toute animation */
   position: static !important; /* fixe la position */
 }
+/* Stabiliser le logo sur smartphone */
+@media only screen and (max-width: 768px) {
+  .logo {
+    width: 120px; /* taille adaptée aux petits écrans */
+    margin: 10px auto; /* centre avec un petit espace */
+    position: static !important;
+    animation: none !important;
+  }
+}
