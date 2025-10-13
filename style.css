@@ -1,19 +1,73 @@
-
-/* Fix logo pour smartphone et ordinateur */
-.logo {
-  width: 150px; /* taille fixe */
-  height: auto; /* garde les proportions */
-  display: block; /* pour centrer correctement */
-  margin: 0 auto; /* centre horizontalement */
-  animation: none !important; /* désactive toute animation */
-  position: static !important; /* fixe la position */
+/* Style général */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  color: white;
+  text-align: center;
 }
-/* Stabiliser le logo sur smartphone */
+
+/* En-tête */
+.header {
+  padding: 30px 20px;
+}
+
+.logo {
+  width: 130px;
+  margin-bottom: 15px;
+}
+
+/* Titre principal */
+h1 {
+  font-size: 1.8rem;
+  color: #ff0050;
+}
+
+/* Contenu principal */
+.main {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.actions button {
+  background: #ff0050;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 1rem;
+  padding: 12px 25px;
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.actions button:hover {
+  background: #ff4081;
+  transform: scale(1.05);
+}
+
+/* Pied de page */
+.footer {
+  margin-top: 40px;
+  padding: 15px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Adaptation smartphone */
 @media only screen and (max-width: 768px) {
   .logo {
-    width: 120px; /* taille adaptée aux petits écrans */
-    margin: 10px auto; /* centre avec un petit espace */
-    position: static !important;
+    width: 100px;
     animation: none !important;
+    margin: 10px auto;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .actions button {
+    width: 80%;
   }
 }
