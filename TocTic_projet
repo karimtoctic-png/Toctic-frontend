@@ -1,0 +1,140 @@
+DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TocTic - Libère ton talent !</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <img src="images/logo.png" alt="Logo TocTic" class="logo">
+    <h1>Libère ton talent sur TocTic 🎵🎬</h1>
+  </header>
+
+  <main class="main">
+    <p>Bienvenue sur <strong>TocTic</strong> — la plateforme où les créateurs brillent 🌟</p>
+    <div class="actions">
+      <button onclick="window.location.href='Register.html'">Découvrir les créateurs</button>
+      <button onclick="window.location.href='Register.html'">Se connecter</button>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 TocTic.live — Libère ton talent !</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription / Connexion - TocTic</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <img src="images/logo.png" alt="Logo TocTic" class="logo">
+    <h1>Inscription / Connexion</h1>
+  </header>
+
+  <main class="main">
+    <section class="register">
+      <h2>Créer un compte</h2>
+      <input type="text" placeholder="Nom d'utilisateur">
+      <input type="email" placeholder="Email">
+      <input type="password" placeholder="Mot de passe">
+      <button>S'inscrire</button>
+    </section>
+
+    <section class="login">
+      <h2>Se connecter</h2>
+      <input type="email" placeholder="Email">
+      <input type="password" placeholder="Mot de passe">
+      <button>Connexion</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 TocTic.live — Libère ton talent !</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #ff0055;
+  color: white;
+  padding: 20px;
+}
+
+.header .logo {
+  width: 150px;
+}
+
+.main {
+  padding: 20px;
+}
+
+.actions button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #00d0ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background-color: #0099cc;
+}
+
+.register, .login {
+  margin: 20px auto;
+  max-width: 300px;
+}
+
+.register input, .login input {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.register button, .login button {
+  padding: 10px 20px;
+  background-color: #ff0055;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.register button:hover, .login button:hover {
+  background-color: #cc0044;
+}
+
+.footer {
+  background-color: #222;
+  color: white;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+// Pour l'instant, simple alert quand on clique sur les boutons
+document.querySelectorAll('button').forEach(button => {
+  button.addEventListener('click', () => {
+    console.log('Bouton cliqué !');
+  });
+});
