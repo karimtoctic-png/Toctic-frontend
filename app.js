@@ -1,13 +1,9 @@
-// app.js – scripts principaux du site TocTic
+// Fonctionnalités de base TocTic
 
-// Affiche un message dans la console
-console.log("Bienvenue sur TocTic ! 🎵🎬");
-
-// Gestion des boutons
 document.addEventListener("DOMContentLoaded", () => {
-  const boutons = document.querySelectorAll("button");
+  const buttons = document.querySelectorAll(".actions button");
 
-  boutons.forEach((btn) => {
+  buttons.forEach(btn => {
     btn.addEventListener("click", () => {
       alert("Fonctionnalité à venir ✨");
     });
