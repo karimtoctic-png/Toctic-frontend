@@ -3,81 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Toctic - Libère ton talent</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 20px;
-      background-color: #f9f9f9;
-      /* Si tu veux mettre un arrière-plan : décommente la ligne suivante */
-      /* background-image: url('images/background.jpg'); background-size: cover; background-position: center; */
-    }
-
-    /* Logo */
-    .logo {
-      width: 150px;
-      margin: 20px auto;
-      display: block;
-      position: static;
-      animation: none;
-    }
-
-    /* Titre */
-    h1 {
-      font-size: 1.8em;
-      margin: 20px 0;
-    }
-
-    /* Icônes */
-    .icones img {
-      width: 80px;
-      margin: 10px;
-    }
-
-    /* Stabiliser le logo sur smartphone */
-    @media only screen and (max-width: 768px) {
-      .logo {
-        width: 120px;
-        margin: 10px auto;
-      }
-
-      h1 {
-        font-size: 1.5em;
-      }
-
-      .icones img {
-        width: 60px;
-      }
-    }
-  </style>
+  <title>TocTic - Libère ton talent !</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Logo -->
-  <header>
-    <img src="images/logo.png" alt="Logo Toctic" class="logo">
+  <header class="header">
+    <img src="images/logo.png" alt="Logo TocTic" class="logo">
+    <h1>Libère ton talent sur TocTic 🎵🎬</h1>
   </header>
 
-  <!-- Titre -->
-  <h1>Libère ton talent sur Toctic ! 🎵🎬</h1>
+  <main class="main">
+    <p>Bienvenue sur <strong>TocTic</strong> — la plateforme où les créateurs brillent 🌟</p>
+    <div class="actions">
+      <button onclick="alert('Fonctionnalité à venir ✨')">Découvrir les créateurs</button>
+      <button onclick="alert('Connexion bientôt disponible 🔒')">Se connecter</button>
+    </div>
+  </main>
 
-  <!-- Icônes -->
-  <section class="icones">
-    <img src="images/icone1.png" alt="Icône 1">
-    <img src="images/icone2.png" alt="Icône 2">
-    <!-- Ajoute d'autres icônes ici si nécessaire -->
-  </section>
+  <footer class="footer">
+    <p>© 2025 TocTic.live — Libère ton talent !</p>
+  </footer>
 
-  <!-- Autres images -->
-  <section class="images-sup">
-    <img src="images/background.jpg" alt="Arrière-plan">
-    <!-- Ajoute toutes les autres images de ton projet ici -->
-  </section>
-
-  <!-- Script JS -->
   <script src="app.js"></script>
-
 </body>
 </html>
