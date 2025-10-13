@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription / Connexion - TocTic</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <img src="images/logo.png" alt="Logo TocTic" class="logo">
+    <h1>Inscription / Connexion</h1>
+  </header>
+
+  <main class="main">
+    <div class="form-container">
+      <h2>Créer un compte</h2>
+      <form id="registerForm">
+        <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Mot de passe" required>
+        <button type="submit">S'inscrire</button>
+      </form>
+
+      <h2>Se connecter</h2>
+      <form id="loginForm">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Mot de passe" required>
+        <button type="submit">Connexion</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 TocTic.live — Libère ton talent !</p>
+  </footer>
+
+  <script>
+    // Exemple simple : alert pour tester le formulaire
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Compte créé avec succès 🎉');
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Connexion réussie 🔑');
+    });
+  </script>
+</body>
+</html>
