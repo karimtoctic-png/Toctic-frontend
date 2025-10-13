@@ -1,11 +1,22 @@
-// Fonctionnalités de base TocTic
+// app.js - Fonctions principales de TocTic
 
-document.addEventListener("DOMContentLoaded", () => {
-  const buttons = document.querySelectorAll(".actions button");
+// Quand la page est chargée
+document.addEventListener("DOMContentLoaded", function() {
 
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      alert("Fonctionnalité à venir ✨");
-    });
+  // Boutons actions sur la page d'accueil
+  const discoverBtn = document.querySelector(".actions button:nth-child(1)");
+  const loginBtn = document.querySelector(".actions button:nth-child(2)");
+
+  // Redirections ou alertes
+  discoverBtn.addEventListener("click", function() {
+    // Pour l'instant redirige vers register.html
+    window.location.href = "register.html";
   });
+
+  loginBtn.addEventListener("click", function() {
+    // Pour l'instant redirige vers register.html
+    window.location.href = "register.html";
+  });
+
+  console.log("TocTic ready 🚀");
 });
