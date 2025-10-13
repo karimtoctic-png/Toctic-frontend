@@ -1,1 +1,1 @@
-console.log('TocTic project loaded');
+console.log("Bienvenue sur TocTic — Libère ton talent !");
