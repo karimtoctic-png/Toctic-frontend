@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espace Administrateur - TocTic</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="admin-data.js" defer></script>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      padding: 20px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+    }
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    h2 {
+      margin-top: 10px;
+      font-size: 1.2em;
+      color: #00ffff;
+    }
+    .value {
+      font-size: 2em;
+      font-weight: bold;
+      color: #fff;
+    }
+    footer {
+      background: rgba(255,255,255,0.05);
+      padding: 15px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>👑 Tableau de bord Administrateur TocTic</h1>
+    <p>Bienvenue, <strong>Karim</strong> — Fondateur officiel de TocTic.live</p>
+  </header>
+
+  <main class="dashboard">
+    <div class="card">
+      <h2>Revenus du jour</h2>
+      <div class="value" id="revenus-jour">0 €</div>
+    </div>
+    <div class="card">
+      <h2>Revenus totaux</h2>
+      <div class="value" id="revenus-total">0 €</div>
+    </div>
+    <div class="card">
+      <h2>Utilisateurs actifs</h2>
+      <div class="value" id="utilisateurs-actifs">0</div>
+    </div>
+    <div class="card">
+      <h2>Nouveaux inscrits</h2>
+      <div class="value" id="nouveaux-inscrits">0</div>
+    </div>
+    <div class="card">
+      <h2>Abonnés VIP</h2>
+      <div class="value" id="vip">0</div>
+    </div>
+    <div class="card">
+      <h2>Abonnés VIP+</h2>
+      <div class="value" id="vip-plus">0</div>
+    </div>
+    <div class="card">
+      <h2>Comptes supprimés</h2>
+      <div class="value" id="comptes-supprimes">0</div>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 TocTic.live — Interface administrateur exclusive.
+  </footer>
+</body>
+</html>
