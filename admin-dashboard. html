@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de bord Administrateur - TocTic</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="admin-data.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Tableau de bord Administrateur</h1>
+  </header>
+
+  <main class="admin-dashboard">
+    <section>
+      <h2>Statistiques</h2>
+      <p>Utilisateurs inscrits : <span id="userCount">1245</span></p>
+      <p>Revenus du jour : <span id="dailyRevenue">3 450 €</span></p>
+      <p>Revenus totaux : <span id="totalRevenue">87 920 €</span></p>
+    </section>
+
+    <section>
+      <h2>Contrôle</h2>
+      <button id="refreshData">Actualiser les données</button>
+      <button id="logout">Déconnexion</button>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 TocTic.live — Espace Administrateur réservé à Karim
+  </footer>
+</body>
+</html>
