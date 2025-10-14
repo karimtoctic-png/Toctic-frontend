@@ -1,37 +1,23 @@
-// admin-data.js — Données dynamiques TocTic Admin Dashboard
+// === Gestion des données administrateur TocTic ===
 
-// Données simulées
-const dashboardData = {
-  revenusJour: 120.75,
-  revenusTotal: 52340.88,
-  utilisateursActifs: 2450,
-  nouveauxInscrits: 127,
-  vip: 68,
-  vipPlus: 24,
-  comptesSupprimes: 3,
+// Simulation de données utilisateurs
+const utilisateurs = [
+  { id: 1, nom: "Lina", email: "lina@toctic.live", statut: "VIP+" },
+  { id: 2, nom: "Yanis", email: "yanis@toctic.live", statut: "Actif" },
+  { id: 3, nom: "Mila", email: "mila@toctic.live", statut: "Banni" },
+];
+
+// Simulation des statistiques
+const stats = {
+  totalUtilisateurs: 3204,
+  abonnementsVIP: 412,
+  revenusTotaux: "12 487 €",
+  comptesSupprimes: 58,
 };
 
-// Fonction pour afficher les données dans la console (test)
-console.log("📊 Données du tableau de bord TocTic :", dashboardData);
-
-// Fonction de mise à jour du tableau de bord
-function updateDashboard() {
-  document.getElementById("revenus-jour").textContent = dashboardData.revenusJour.toFixed(2) + " €";
-  document.getElementById("revenus-total").textContent = dashboardData.revenusTotal.toFixed(2) + " €";
-  document.getElementById("utilisateurs-actifs").textContent = dashboardData.utilisateursActifs;
-  document.getElementById("nouveaux-inscrits").textContent = dashboardData.nouveauxInscrits;
-  document.getElementById("vip").textContent = dashboardData.vip;
-  document.getElementById("vip-plus").textContent = dashboardData.vipPlus;
-  document.getElementById("comptes-supprimes").textContent = dashboardData.comptesSupprimes;
-}
-
-// Actualiser toutes les 5 secondes
-setInterval(() => {
-  dashboardData.revenusJour += Math.random() * 5;
-  dashboardData.revenusTotal += Math.random() * 100;
-  dashboardData.utilisateursActifs += Math.floor(Math.random() * 10);
-  updateDashboard();
-}, 5000);
-
-// Initialisation au chargement
-window.addEventListener("DOMContentLoaded", updateDashboard);
+// Fonction d'affichage dans la console
+function afficherInfosAdmin() {
+  console.log("=== Tableau de Bord Admin TocTic ===");
+  console.log("Utilisateurs enregistrés :", stats.totalUtilisateurs);
+  console.log("Abonnements VIP :", stats.abonnementsVIP);
+  console.log("
