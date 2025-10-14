@@ -1,0 +1,18 @@
+// Vérifie si l'utilisateur est connecté comme administrateur
+document.addEventListener("DOMContentLoaded", () => {
+  const isAdmin = sessionStorage.getItem("isAdmin");
+
+  if (!isAdmin) {
+    alert("Accès refusé : vous devez être connecté en tant qu'administrateur.");
+    window.location.href = "admin-login.html"; // renvoie vers la page de connexion
+  }
+
+  // Gestion du bouton de déconnexion
+  const logoutBtn = document.getElementById("logoutBtn");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      sessionStorage.removeItem("isAdmin");
+      window.location.href = "index.html";
+    });
+  }
+});
