@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connexion Administrateur - TocTic</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function loginAdmin(event) {
+      event.preventDefault();
+      const email = document.getElementById("adminEmail").value;
+      const password = document.getElementById("adminPassword").value;
+
+      // Identifiants administrateur (à personnaliser)
+      const adminEmail = "admin@toctic.live";
+      const adminPassword = "admin123";
+
+      if (email === adminEmail && password === adminPassword) {
+        sessionStorage.setItem("isAdmin", "true");
+        alert("Connexion réussie !");
+        window.location.href = "admin-dashboard.html";
+      } else {
+        alert("Identifiants incorrects !");
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="Logo TocTic" width="100" />
+    <h1>Espace Administrateur</h1>
+  </header>
+
+  <main class="admin-login">
+    <h2>Connexion</h2>
+    <form onsubmit="loginAdmin(event)">
+      <input type="email" id="adminEmail" placeholder="Email administrateur" required />
+      <input type="password" id="adminPassword" placeholder="Mot de passe" required />
+      <button type="submit">Se connecter</button>
+    </form>
+  </main>
+
+  <footer>© 2025 TocTic.live — Accès réservé à l'administration</footer>
+</body>
+</html>
