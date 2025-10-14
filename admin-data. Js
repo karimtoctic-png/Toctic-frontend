@@ -1,0 +1,29 @@
+// Connexion admin
+const form = document.getElementById("adminLoginForm");
+if (form) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const username = document.getElementById("adminUsername").value;
+    const password = document.getElementById("adminPassword").value;
+    if (username === "admin" && password === "toctic2025") {
+      window.location.href = "admin-dashboard.html";
+    } else {
+      document.getElementById("errorMessage").style.display = "block";
+    }
+  });
+}
+
+// Gestion du tableau de bord
+const refreshBtn = document.getElementById("refreshData");
+if (refreshBtn) {
+  refreshBtn.addEventListener("click", () => {
+    alert("Données actualisées !");
+  });
+}
+
+const logoutBtn = document.getElementById("logout");
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", () => {
+    window.location.href = "admin.html";
+  });
+}
