@@ -1,38 +1,69 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Panneau d'administration - TocTic</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de bord administrateur - TocTic</title>
+  <link rel="stylesheet" href="style.css">
   <script src="admin-data.js" defer></script>
 </head>
-<body>
+<body class="admin-dashboard">
   <header>
-    <h1>👑 Espace Administrateur TocTic</h1>
-    <nav>
-      <a href="index.html">Accueil</a>
-      <a href="admin-dashboard.html">Tableau de bord</a>
-      <a href="Register.html">Utilisateurs</a>
-    </nav>
+    <h1>👑 Tableau de bord Administrateur - TocTic</h1>
   </header>
 
-  <main class="admin-page">
-    <section>
-      <h2>Bienvenue dans le panneau d'administration</h2>
-      <p>Depuis cette interface, vous pouvez gérer :</p>
+  <main>
+    <section class="stats">
+      <h2>Statistiques générales</h2>
       <ul>
-        <li>Les utilisateurs inscrits</li>
-        <li>Les paiements et abonnements</li>
-        <li>Les créateurs mis en avant</li>
-        <li>Les statistiques du site</li>
+        <li><strong>Total utilisateurs :</strong> <span id="totalUtilisateurs">...</span></li>
+        <li><strong>Abonnements VIP :</strong> <span id="abonnementsVIP">...</span></li>
+        <li><strong>Revenus totaux :</strong> <span id="revenusTotaux">...</span></li>
+        <li><strong>Comptes supprimés :</strong> <span id="comptesSupprimes">...</span></li>
       </ul>
-      <button onclick="window.location.href='admin-dashboard.html'">Accéder au Tableau de Bord</button>
+    </section>
+
+    <section class="users">
+      <h2>Utilisateurs récents</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Statut</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="userList"></tbody>
+      </table>
     </section>
   </main>
 
   <footer>
-    © 2025 TocTic.live — Interface Administrateur
+    © 2025 TocTic.live — Espace Administrateur Officiel
   </footer>
+
+  <script>
+    // Charger les stats dynamiquement
+    document.getElementById("totalUtilisateurs").textContent = stats.totalUtilisateurs;
+    document.getElementById("abonnementsVIP").textContent = stats.abonnementsVIP;
+    document.getElementById("revenusTotaux").textContent = stats.revenusTotaux;
+    document.getElementById("comptesSupprimes").textContent = stats.comptesSupprimes;
+
+    // Générer la liste des utilisateurs
+    const tbody = document.getElementById("userList");
+    utilisateurs.forEach(u => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${u.id}</td>
+        <td>${u.nom}</td>
+        <td>${u.email}</td>
+        <td>${u.statut}</td>
+        <td><button onclick="supprimerUtilisateur(${u.id})">🗑️ Supprimer</button></td>
+      `;
+      tbody.appendChild(row);
+    });
+  </script>
 </body>
 </html>
