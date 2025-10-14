@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tableau de bord Admin - TocTic</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <header class="admin-header">
+    <img src="images/logo.png" alt="Logo TocTic" class="logo">
+    <h1>Panneau d'administration</h1>
+    <button id="logoutBtn">Déconnexion</button>
+  </header>
+
+  <main class="dashboard">
+    <section class="stats">
+      <h2>Statistiques du jour</h2>
+      <ul>
+        <li><strong>Utilisateurs inscrits :</strong> 1532</li>
+        <li><strong>Abonnements VIP :</strong> 76</li>
+        <li><strong>Revenus du jour :</strong> 845 €</li>
+      </ul>
+    </section>
+
+    <section class="controls">
+      <h2>Gestion rapide</h2>
+      <button>Voir les créateurs</button>
+      <button>Gérer les paiements</button>
+      <button>Modérer les comptes</button>
+      <button>Afficher le classement</button>
+    </section>
+
+    <section class="logs">
+      <h2>Dernières activités</h2>
+      <p>13:25 — Un nouvel utilisateur a rejoint TocTic.</p>
+      <p>13:12 — Paiement VIP validé.</p>
+      <p>12:48 — Un compte a été signalé pour abus.</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 TocTic.live — Panneau d’administration officiel.
+  </footer>
+
+  <script src="admin.js" defer></script>
+</body>
+</html>
