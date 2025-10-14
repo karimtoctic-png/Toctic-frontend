@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion Administrateur - TocTic</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="admin-data.js" defer></script>
+</head>
+<body>
+  <div class="admin-login">
+    <h1>Connexion Administrateur</h1>
+    <form id="adminLoginForm">
+      <input type="text" id="adminUsername" placeholder="Nom d'utilisateur" required>
+      <input type="password" id="adminPassword" placeholder="Mot de passe" required>
+      <button type="submit">Se connecter</button>
+    </form>
+    <p id="errorMessage" style="color:red; display:none;">Identifiants incorrects</p>
+  </div>
+</body>
+</html>
