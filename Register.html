@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inscription / Connexion - TocTic</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
 </head>
 <body>
   <header>
     <img src="images/logo.png" alt="Logo TocTic" width="100">
-    <h1>Inscription / Connexion</h1>
+    <h1>🎵 TocTic</h1>
+    <p>Libère ton talent !</p>
   </header>
 
-  <main class="register">
+  <main class="register-container">
     <section class="signup">
       <h2>Créer un compte</h2>
       <form id="signupForm">
-        <input type="text" placeholder="Nom d'utilisateur" required />
-        <input type="email" placeholder="Email" required />
-        <input type="password" placeholder="Mot de passe" required />
-        <button type="submit">S'inscrire</button>
+        <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Mot de passe" required>
+        <button type="submit" class="btn">S'inscrire</button>
       </form>
     </section>
 
     <section class="login">
       <h2>Se connecter</h2>
       <form id="loginForm">
-        <input type="email" placeholder="Email" required />
-        <input type="password" placeholder="Mot de passe" required />
-        <button type="submit">Connexion</button>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Mot de passe" required>
+        <button type="submit" class="btn admin-btn">Connexion</button>
       </form>
     </section>
   </main>
 
   <footer>
-    © 2025 TocTic.live — Libère ton talent !
+    <p>© 2025 TocTic.live — Libère ton talent</p>
   </footer>
 </body>
 </html>
