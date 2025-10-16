@@ -3,128 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tableau de bord — TocTic Admin</title>
+  <title>Connexion Administrateur — TocTic</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #000000, #111827);
-      color: white;
-      text-align: center;
-    }
-
-    header {
-      padding: 20px;
-      border-bottom: 2px solid #00fff0;
-    }
-
-    .stats-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0,255,240,0.2);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: scale(1.03);
-    }
-
-    canvas {
-      max-width: 100%;
-      height: auto;
-    }
-
-    footer {
-      margin-top: 30px;
-      padding: 10px;
-      font-size: 0.9rem;
-      opacity: 0.7;
-    }
-  </style>
+  <script src="admin-login.js" defer></script>
 </head>
-
 <body>
   <header>
-    <h1>📊 Tableau de bord administrateur — TocTic</h1>
-    <p>Suivi des revenus, utilisateurs et abonnements VIP</p>
+    <h1>🔐 Connexion Administrateur</h1>
+    <p>Accès réservé à l’équipe TocTic</p>
   </header>
 
-  <main class="stats-container">
-    <div class="card">
-      <h3>Revenus (€/jour)</h3>
-      <canvas id="revenusChart"></canvas>
-    </div>
-
-    <div class="card">
-      <h3>Inscriptions quotidiennes</h3>
-      <canvas id="usersChart"></canvas>
-    </div>
-
-    <div class="card">
-      <h3>Abonnements VIP/VIP+</h3>
-      <canvas id="vipChart"></canvas>
-    </div>
+  <main class="admin-login">
+    <form id="adminLoginForm">
+      <input type="text" id="username" placeholder="Identifiant" required />
+      <input type="password" id="password" placeholder="Mot de passe" required />
+      <button type="submit">Connexion</button>
+    </form>
   </main>
 
   <footer>
-    © 2025 TocTic.live — Tableau de bord administrateur
+    © 2025 TocTic.live — Accès Sécurisé
   </footer>
-
-  <script>
-    // === Graphique des revenus ===
-    const ctx1 = document.getElementById('revenusChart');
-    new Chart(ctx1, {
-      type: 'line',
-      data: {
-        labels: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
-        datasets: [{
-          label: 'Revenus (€)',
-          data: [1200, 1500, 1800, 1700, 2100, 2500, 2900],
-          borderColor: '#00fff0',
-          backgroundColor: 'rgba(0,255,240,0.2)',
-          tension: 0.4,
-          fill: true
-        }]
-      },
-    });
-
-    // === Graphique des utilisateurs ===
-    const ctx2 = document.getElementById('usersChart');
-    new Chart(ctx2, {
-      type: 'bar',
-      data: {
-        labels: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
-        datasets: [{
-          label: 'Nouveaux utilisateurs',
-          data: [40, 55, 48, 70, 64, 90, 120],
-          backgroundColor: '#ff0080'
-        }]
-      },
-    });
-
-    // === Graphique des abonnements VIP/VIP+ ===
-    const ctx3 = document.getElementById('vipChart');
-    new Chart(ctx3, {
-      type: 'pie',
-      data: {
-        labels: ['VIP', 'VIP+'],
-        datasets: [{
-          data: [320, 90],
-          backgroundColor: ['#ff0080', '#00fff0']
-        }]
-      },
-    });
-  </script>
 </body>
 </html>
