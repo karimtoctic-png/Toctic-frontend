@@ -3,59 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TocTic Admin — Tableau de bord</title>
+  <title>Tableau de bord — TocTic Admin</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    body {
-      background: radial-gradient(circle at top, #0f0f1e, #000);
-      color: white;
-      font-family: "Poppins", sans-serif;
-      text-align: center;
-      min-height: 100vh;
-      margin: 0;
-    }
-    header {
-      padding: 30px 10px;
-      background: linear-gradient(90deg, #ff0080, #00fff0);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 1.6em;
-    }
-    .stats-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-    .card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(0,255,240,0.5);
-    }
-    footer {
-      margin-top: 40px;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #bbb;
-    }
-    canvas {
-      margin-top: 15px;
-    }
-  </style>
 </head>
 
 <body>
   <header>
-    <h1>📊 Tableau de bord Administrateur</h1>
-    <p>Suivi en temps réel des performances TocTic</p>
+    <h1>📊 Tableau de bord administrateur — TocTic</h1>
+    <p>Suivi en temps réel des revenus, utilisateurs et abonnements</p>
   </header>
 
   <main class="stats-container">
@@ -70,13 +26,13 @@
     </div>
 
     <div class="card">
-      <h3>Abonnements VIP/VIP+</h3>
+      <h3>Abonnements VIP / VIP+</h3>
       <canvas id="vipChart"></canvas>
     </div>
   </main>
 
   <footer>
-    © 2025 TocTic.live — Interface administrateur exclusive
+    © 2025 TocTic.live — Tableau de bord administrateur
   </footer>
 
   <script>
@@ -95,7 +51,6 @@
           fill: true
         }]
       },
-      options: { scales: { y: { beginAtZero: true } } }
     });
 
     // === Graphique des utilisateurs ===
@@ -110,19 +65,17 @@
           backgroundColor: '#ff0080'
         }]
       },
-      options: { scales: { y: { beginAtZero: true } } }
     });
 
-    // === Graphique des abonnements VIP/VIP+ ===
+    // === Graphique des abonnements VIP ===
     const ctx3 = document.getElementById('vipChart');
     new Chart(ctx3, {
       type: 'doughnut',
       data: {
         labels: ['VIP', 'VIP+'],
         datasets: [{
-          data: [320, 95],
+          data: [320, 92],
           backgroundColor: ['#ff0080', '#00fff0'],
-          hoverOffset: 10
         }]
       },
     });
