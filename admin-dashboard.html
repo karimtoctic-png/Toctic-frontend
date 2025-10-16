@@ -3,70 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TocTic — Tableau de Contrôle Admin</title>
+  <title>Tableau de bord — TocTic Admin</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="admin-data.js" defer></script>
 </head>
 
 <body>
   <header>
-    <h1>📈 Tableau de Contrôle Administrateur</h1>
-    <p>Surveille en temps réel les statistiques de TocTic</p>
+    <h1>📊 Tableau de bord administrateur — TocTic</h1>
+    <p>Suivi des revenus, utilisateurs et abonnements VIP</p>
   </header>
 
-  <main class="dashboard">
-    <div class="card">
-      <h3>👥 Utilisateurs actifs</h3>
+  <main class="stats-container">
+    <div class="stat-card">
+      <h3>Utilisateurs actifs</h3>
       <p id="activeUsers">Chargement...</p>
     </div>
 
-    <div class="card">
-      <h3>💎 Abonnés VIP+</h3>
+    <div class="stat-card">
+      <h3>Abonnements VIP/VIP+</h3>
       <p id="vipCount">Chargement...</p>
     </div>
 
-    <div class="card">
-      <h3>💰 Revenus totaux</h3>
+    <div class="stat-card">
+      <h3>Revenus totaux</h3>
       <p id="revenusTotal">Chargement...</p>
-    </div>
-
-    <div class="chart-container">
-      <canvas id="revenusChart"></canvas>
     </div>
   </main>
 
+  <section class="charts">
+    <div class="chart">
+      <h3>Revenus hebdomadaires</h3>
+      <canvas id="revenusChart"></canvas>
+    </div>
+  </section>
+
   <footer>
-    © 2025 TocTic.live — Panneau administrateur
+    © 2025 TocTic.live — Tableau de bord administrateur
   </footer>
 
   <script>
-    // Données dynamiques
-    const stats = {
-      actifs: 3204,
-      vip: 412,
-      revenus: 12487,
-      evolution: [1200, 1500, 1800, 1700, 2100, 2500, 2900]
-    };
-
-    // Insertion dans le tableau
-    document.getElementById("activeUsers").textContent = stats.actifs;
-    document.getElementById("vipCount").textContent = stats.vip;
-    document.getElementById("revenusTotal").textContent = stats.revenus + " €";
-
-    // Graphique des revenus
-    new Chart(document.getElementById("revenusChart"), {
-      type: "line",
+    const ctx = document.getElementById('revenusChart');
+    new Chart(ctx, {
+      type: 'line',
       data: {
-        labels: ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
+        labels: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
         datasets: [{
-          label: "Revenus (€)",
-          data: stats.evolution,
-          borderColor: "#00fff0",
-          backgroundColor: "rgba(0,255,240,0.15)",
-          fill: true,
-          tension: 0.4
+          label: 'Revenus (€)',
+          data: [1200, 1500, 1800, 1700, 2100, 2500, 2900],
+          borderColor: '#00fff0',
+          backgroundColor: 'rgba(0,255,240,0.2)',
+          tension: 0.4,
+          fill: true
         }]
-      }
+      },
     });
   </script>
 </body>
