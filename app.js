@@ -1,15 +1,22 @@
-// --- TocTic App.js ---
-// Petit script pour ajouter de la vie à ton site TocTic
+// --- Script principal TocTic ---
 
-document.addEventListener("DOMContentLoaded", () => {
-  const buttons = document.querySelectorAll("button");
+// Gestion du formulaire d'inscription
+document.getElementById("signupForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert("✅ Inscription réussie sur TocTic !");
+  e.target.reset();
+});
 
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      btn.classList.add("clicked");
-      setTimeout(() => btn.classList.remove("clicked"), 300);
-    });
-  });
+// Gestion du formulaire de connexion
+document.getElementById("loginForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert("🔐 Connexion réussie ! Bienvenue sur TocTic 🎵");
+  e.target.reset();
+});
 
-  console.log("TocTic est prêt ! Libère ton talent 🎵");
+// Effet clic sur les boutons
+const buttons = document.querySelectorAll("button");
+buttons.forEach((btn) => {
+  btn.addEventListener("mousedown", () => btn.classList.add("clicked"));
+  btn.addEventListener("mouseup", () => btn.classList.remove("clicked"));
 });
