@@ -68,4 +68,18 @@
     });
 
     // === Graphique des abonnements VIP/VIP+ ===
-    const ctx3 = document
+    const ctx3 = document.getElementById('vipChart');
+    new Chart(ctx3, {
+      type: 'doughnut',
+      data: {
+        labels: ['VIP', 'VIP+'],
+        datasets: [{
+          label: 'Abonnements',
+          data: [320, 90],
+          backgroundColor: ['#00fff0', '#ff0080']
+        }]
+      },
+    });
+  </script>
+</body>
+</html>
