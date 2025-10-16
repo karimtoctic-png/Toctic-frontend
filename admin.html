@@ -1,53 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TocTic - Accès Admin</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="admin-data.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de bord administrateur - TocTic</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="admin-data.js" defer></script>
 </head>
-<body class="admin-login-page">
-  <div class="admin-container">
-    <h1 class="admin-title">Panneau d'administration TocTic 🔐</h1>
-    <p class="admin-subtitle">Accès réservé au fondateur</p>
+<body>
+  <header>
+    <h1>🎛️ Tableau de bord administrateur</h1>
+    <p>Bienvenue sur le panneau de gestion TocTic.live</p>
+  </header>
 
-    <form id="adminLoginForm" class="admin-form">
-      <label for="adminUser">Nom d’utilisateur :</label>
-      <input type="text" id="adminUser" placeholder="Nom du fondateur" required />
+  <main>
+    <section class="stats">
+      <h2>📊 Statistiques générales</h2>
+      <ul>
+        <li><strong>Total utilisateurs :</strong> 3204</li>
+        <li><strong>Abonnements VIP :</strong> 412</li>
+        <li><strong>Revenus totaux :</strong> 12 487 €</li>
+        <li><strong>Comptes supprimés :</strong> 58</li>
+      </ul>
+    </section>
 
-      <label for="adminPass">Mot de passe :</label>
-      <input type="password" id="adminPass" placeholder="Mot de passe secret" required />
+    <section class="users">
+      <h2>👥 Liste des utilisateurs</h2>
+      <table border="1" cellpadding="8">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+        <tbody id="userTable">
+          <!-- Contenu généré automatiquement par admin-data.js -->
+        </tbody>
+      </table>
+    </section>
+  </main>
 
-      <button type="submit" class="btn-admin-login">Connexion</button>
-      <p id="loginMessage" class="login-message"></p>
-    </form>
-  </div>
-
-  <script>
-    const form = document.getElementById('adminLoginForm');
-    const message = document.getElementById('loginMessage');
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const user = document.getElementById('adminUser').value;
-      const pass = document.getElementById('adminPass').value;
-
-      // Identifiants fondateur (modifiables dans admin-data.js si besoin)
-      const adminUser = "karim";
-      const adminPass = "toctic2025";
-
-      if (user === adminUser && pass === adminPass) {
-        message.textContent = "Connexion réussie ✅ Redirection...";
-        message.style.color = "green";
-        setTimeout(() => {
-          window.location.href = "admin-dashboard.html";
-        }, 1500);
-      } else {
-        message.textContent = "Identifiants incorrects ❌";
-        message.style.color = "red";
-      }
-    });
-  </script>
+  <footer>
+    <p>© 2025 TocTic.live — Interface administrateur sécurisée</p>
+  </footer>
 </body>
 </html>
