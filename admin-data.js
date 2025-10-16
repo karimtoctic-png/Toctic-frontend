@@ -1,34 +1,34 @@
+// === Gestion des données dynamiques TocTic Admin ===
 
-// === Gestion des données administrateur TocTic ===
-
-// Simulation de base de données
-const utilisateurs = [
-  { id: 1, nom: "Lina", email: "lina@toctic.live", statut: "VIP+" },
-  { id: 2, nom: "Yanis", email: "yanis@toctic.live", statut: "Actif" },
-  { id: 3, nom: "Mila", email: "mila@toctic.live", statut: "Banni" },
-  { id: 4, nom: "Karim", email: "karim@toctic.live", statut: "Admin" },
-];
-
-// Statistiques du site
-const stats = {
-  totalUtilisateurs: 3204,
+// Données administratives simulées
+const adminStats = {
+  utilisateursActifs: 3204,
   abonnementsVIP: 412,
-  revenusTotaux: "12 487 €",
+  revenusTotaux: 12487,
   comptesSupprimes: 58,
+  revenusHebdo: [1200, 1500, 1800, 1700, 2100, 2500, 2900]
 };
 
-// Fonction principale d'affichage
+// Fonction d’affichage console (suivi technique)
 function afficherInfosAdmin() {
   console.log("=== Tableau de Bord Admin TocTic ===");
-  console.log("Utilisateurs enregistrés :", stats.totalUtilisateurs);
-  console.log("Abonnements VIP :", stats.abonnementsVIP);
-  console.log("Revenus totaux :", stats.revenusTotaux);
-  console.log("Comptes supprimés :", stats.comptesSupprimes);
-  console.log("—— Liste des utilisateurs ——");
-  utilisateurs.forEach(u => {
-    console.log(`${u.id}. ${u.nom} — ${u.email} — ${u.statut}`);
-  });
+  console.log("Utilisateurs actifs :", adminStats.utilisateursActifs);
+  console.log("Abonnements VIP :", adminStats.abonnementsVIP);
+  console.log("Revenus totaux :", adminStats.revenusTotaux + " €");
+  console.log("Comptes supprimés :", adminStats.comptesSupprimes);
 }
 
-// Exécution automatique au chargement
-afficherInfosAdmin();
+// Liaison automatique avec le tableau admin-dashboard.html
+document.addEventListener("DOMContentLoaded", () => {
+  const actif = document.getElementById("activeUsers");
+  const vip = document.getElementById("vipCount");
+  const revenus = document.getElementById("revenusTotal");
+
+  if (actif && vip && revenus) {
+    actif.textContent = adminStats.utilisateursActifs;
+    vip.textContent = adminStats.abonnementsVIP;
+    revenus.textContent = adminStats.revenusTotaux + " €";
+  }
+
+  afficherInfosAdmin();
+});
