@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion Admin — TocTic</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="admin-login">
+  <div class="login-container">
+    <h1>🔐 Connexion Administrateur TocTic</h1>
+    <p>Accès réservé à Karim</p>
+
+    <form id="adminLoginForm">
+      <label>Nom d’utilisateur :</label>
+      <input type="text" id="username" placeholder="Entrez votre identifiant" required>
+
+      <label>Mot de passe :</label>
+      <input type="password" id="password" placeholder="Entrez votre mot de passe" required>
+
+      <button type="submit">Se connecter</button>
+    </form>
+
+    <p id="loginMessage"></p>
+  </div>
+
+  <script>
+    document.getElementById("adminLoginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (username === "karim" && password === "K@rimT0cTic!2025") {
+        localStorage.setItem("adminLoggedIn", "true");
+        document.getElementById("loginMessage").textContent = "✅ Connexion réussie ! Redirection...";
+        document.getElementById("loginMessage").style.color = "lime";
+        setTimeout(() => {
+          window.location.href = "admin-dashboard.html";
+        }, 1500);
+      } else {
+        document.getElementById("loginMessage").textContent = "❌ Identifiants incorrects.";
+        document.getElementById("loginMessage").style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>
