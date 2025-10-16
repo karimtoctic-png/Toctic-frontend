@@ -3,81 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tableau de bord — TocTic Admin</title>
+  <title>TocTic — Tableau de Contrôle Admin</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
   <header>
-    <h1>📊 Tableau de bord administrateur — TocTic</h1>
-    <p>Suivi en temps réel des revenus, utilisateurs et abonnements</p>
+    <h1>📈 Tableau de Contrôle Administrateur</h1>
+    <p>Surveille en temps réel les statistiques de TocTic</p>
   </header>
 
-  <main class="stats-container">
+  <main class="dashboard">
     <div class="card">
-      <h3>Revenus (€/jour)</h3>
+      <h3>👥 Utilisateurs actifs</h3>
+      <p id="activeUsers">Chargement...</p>
+    </div>
+
+    <div class="card">
+      <h3>💎 Abonnés VIP+</h3>
+      <p id="vipCount">Chargement...</p>
+    </div>
+
+    <div class="card">
+      <h3>💰 Revenus totaux</h3>
+      <p id="revenusTotal">Chargement...</p>
+    </div>
+
+    <div class="chart-container">
       <canvas id="revenusChart"></canvas>
-    </div>
-
-    <div class="card">
-      <h3>Inscriptions quotidiennes</h3>
-      <canvas id="usersChart"></canvas>
-    </div>
-
-    <div class="card">
-      <h3>Abonnements VIP / VIP+</h3>
-      <canvas id="vipChart"></canvas>
     </div>
   </main>
 
   <footer>
-    © 2025 TocTic.live — Tableau de bord administrateur
+    © 2025 TocTic.live — Panneau administrateur
   </footer>
 
   <script>
-    // === Graphique des revenus ===
-    const ctx1 = document.getElementById('revenusChart');
-    new Chart(ctx1, {
-      type: 'line',
-      data: {
-        labels: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
-        datasets: [{
-          label: 'Revenus (€)',
-          data: [1200, 1500, 1800, 1700, 2100, 2500, 2900],
-          borderColor: '#00fff0',
-          backgroundColor: 'rgba(0,255,240,0.2)',
-          tension: 0.4,
-          fill: true
-        }]
-      },
-    });
+    // Données dynamiques
+    const stats = {
+      actifs: 3204,
+      vip: 412,
+      revenus: 12487,
+      evolution: [1200, 1500, 1800, 1700, 2100, 2500, 2900]
+    };
 
-    // === Graphique des utilisateurs ===
-    const ctx2 = document.getElementById('usersChart');
-    new Chart(ctx2, {
-      type: 'bar',
-      data: {
-        labels: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
-        datasets: [{
-          label: 'Nouveaux utilisateurs',
-          data: [40, 55, 48, 70, 64, 90, 120],
-          backgroundColor: '#ff0080'
-        }]
-      },
-    });
+    // Insertion dans le tableau
+    document.getElementById("activeUsers").textContent = stats.actifs;
+    document.getElementById("vipCount").textContent = stats.vip;
+    document.getElementById("revenusTotal").textContent = stats.revenus + " €";
 
-    // === Graphique des abonnements VIP ===
-    const ctx3 = document.getElementById('vipChart');
-    new Chart(ctx3, {
-      type: 'doughnut',
+    // Graphique des revenus
+    new Chart(document.getElementById("revenusChart"), {
+      type: "line",
       data: {
-        labels: ['VIP', 'VIP+'],
+        labels: ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
         datasets: [{
-          data: [320, 92],
-          backgroundColor: ['#ff0080', '#00fff0'],
+          label: "Revenus (€)",
+          data: stats.evolution,
+          borderColor: "#00fff0",
+          backgroundColor: "rgba(0,255,240,0.15)",
+          fill: true,
+          tension: 0.4
         }]
-      },
+      }
     });
   </script>
 </body>
