@@ -1,82 +1,66 @@
-/* --- Style général TocTic --- */
+/* === Style spécial Tableau de Bord Admin TocTic === */
+
 body {
-  margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #000000, #111827);
+  background: radial-gradient(circle at top left, #0f0f1a, #000);
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 100vh;
-  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 header {
-  margin-top: 30px;
+  background: linear-gradient(90deg, #00fff0, #ff00b3);
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255,255,255,0.6);
+  font-size: 1.5rem;
+  letter-spacing: 2px;
 }
 
-h1 {
+.dashboard-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,255,240,0.4);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255,0,200,0.7);
+}
+
+.card h3 {
   color: #00fff0;
-  text-shadow: 0 0 10px #00fff0;
-  font-size: 2rem;
+  font-size: 1.3rem;
+}
+
+.card p {
+  font-size: 1.1rem;
+  color: #fff;
+  opacity: 0.8;
+}
+
+canvas {
+  background: rgba(0,0,0,0.4);
+  border-radius: 15px;
+  padding: 10px;
   margin-top: 10px;
 }
 
-main.register {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 30px;
-  width: 90%;
-  max-width: 400px;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0, 255, 240, 0.3);
-}
-
-section {
-  width: 100%;
-  margin-bottom: 25px;
-}
-
-h2 {
-  color: #ff00aa;
-  margin-bottom: 10px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-input {
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-button {
-  background: linear-gradient(90deg, #ff0080, #ff8c00);
-  border: none;
-  padding: 10px;
-  border-radius: 25px;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px #ff0080;
-}
-
 footer {
-  margin-top: 40px;
-  opacity: 0.7;
+  text-align: center;
+  padding: 15px;
   font-size: 0.9rem;
+  opacity: 0.6;
+  color: #ccc;
 }
