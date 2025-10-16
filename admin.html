@@ -1,49 +1,130 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tableau de bord administrateur - TocTic</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="admin-data.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tableau de bord — TocTic Admin</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #000000, #111827);
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      padding: 20px;
+      border-bottom: 2px solid #00fff0;
+    }
+
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,255,240,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    canvas {
+      max-width: 100%;
+      height: auto;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 10px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+  </style>
 </head>
+
 <body>
   <header>
-    <h1>🎛️ Tableau de bord administrateur</h1>
-    <p>Bienvenue sur le panneau de gestion TocTic.live</p>
+    <h1>📊 Tableau de bord administrateur — TocTic</h1>
+    <p>Suivi des revenus, utilisateurs et abonnements VIP</p>
   </header>
 
-  <main>
-    <section class="stats">
-      <h2>📊 Statistiques générales</h2>
-      <ul>
-        <li><strong>Total utilisateurs :</strong> 3204</li>
-        <li><strong>Abonnements VIP :</strong> 412</li>
-        <li><strong>Revenus totaux :</strong> 12 487 €</li>
-        <li><strong>Comptes supprimés :</strong> 58</li>
-      </ul>
-    </section>
+  <main class="stats-container">
+    <div class="card">
+      <h3>Revenus (€/jour)</h3>
+      <canvas id="revenusChart"></canvas>
+    </div>
 
-    <section class="users">
-      <h2>👥 Liste des utilisateurs</h2>
-      <table border="1" cellpadding="8">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nom</th>
-            <th>Email</th>
-            <th>Statut</th>
-          </tr>
-        </thead>
-        <tbody id="userTable">
-          <!-- Contenu généré automatiquement par admin-data.js -->
-        </tbody>
-      </table>
-    </section>
+    <div class="card">
+      <h3>Inscriptions quotidiennes</h3>
+      <canvas id="usersChart"></canvas>
+    </div>
+
+    <div class="card">
+      <h3>Abonnements VIP/VIP+</h3>
+      <canvas id="vipChart"></canvas>
+    </div>
   </main>
 
   <footer>
-    <p>© 2025 TocTic.live — Interface administrateur sécurisée</p>
+    © 2025 TocTic.live — Tableau de bord administrateur
   </footer>
+
+  <script>
+    // === Graphique des revenus ===
+    const ctx1 = document.getElementById('revenusChart');
+    new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
+        datasets: [{
+          label: 'Revenus (€)',
+          data: [1200, 1500, 1800, 1700, 2100, 2500, 2900],
+          borderColor: '#00fff0',
+          backgroundColor: 'rgba(0,255,240,0.2)',
+          tension: 0.4,
+          fill: true
+        }]
+      },
+    });
+
+    // === Graphique des utilisateurs ===
+    const ctx2 = document.getElementById('usersChart');
+    new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
+        datasets: [{
+          label: 'Nouveaux utilisateurs',
+          data: [40, 55, 48, 70, 64, 90, 120],
+          backgroundColor: '#ff0080'
+        }]
+      },
+    });
+
+    // === Graphique des abonnements VIP/VIP+ ===
+    const ctx3 = document.getElementById('vipChart');
+    new Chart(ctx3, {
+      type: 'pie',
+      data: {
+        labels: ['VIP', 'VIP+'],
+        datasets: [{
+          data: [320, 90],
+          backgroundColor: ['#ff0080', '#00fff0']
+        }]
+      },
+    });
+  </script>
 </body>
 </html>
