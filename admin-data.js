@@ -20,4 +20,10 @@ function afficherInfosAdmin() {
   console.log("=== Tableau de Bord Admin TocTic ===");
   console.log("Utilisateurs enregistrés :", stats.totalUtilisateurs);
   console.log("Abonnements VIP :", stats.abonnementsVIP);
-  console.log("
+  console.log("Revenus totaux :", stats.revenusTotaux);
+  console.log("Comptes supprimés :", stats.comptesSupprimes);
+  console.log("Liste des utilisateurs :", utilisateurs);
+}
+
+// Exécution automatique au chargement
+afficherInfosAdmin();
